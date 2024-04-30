@@ -2,14 +2,16 @@
 
 This project is an implementation of an IoT UV sensor using an Mbed and Raspberry Pi 4. The Mbed uses a combination of motor control outputs and I2C communication to collect data and transmit the data via UART to a Raspberry Pi. The Pi then accumulates the data while simultaneously running a Flask server that allows the user to see how UV light levels change over time, minute by minute, and how each wavelength of UV light changes independently.
 
-### Team Members:
+## Team Members:
 - Rithvi Raj Ravichandran
 - Huijun Choi
 
 ///////////////Explain and document your project in a style similar to the mbed notebook pages used in labs with text, code, wiring, photos, and videos.
 
-## Outline:
-(1) 
+# [Outline]
+- (1) List of Components
+
+- (2) Setup Instruction
 
 ## List of Components:
 1. Sparkfun AS7331 UV Sensor Breakout Board
