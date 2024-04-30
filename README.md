@@ -2,42 +2,64 @@
 
 This project is an implementation of an IoT UV sensor using an Mbed and Raspberry Pi 4. The Mbed uses a combination of motor control outputs and I2C communication to collect data and transmit the data via UART to a Raspberry Pi. The Pi then accumulates the data while simultaneously running a Flask server that allows the user to see how UV light levels change over time, minute by minute, and how each wavelength of UV light changes independently.
 
-## Team Members:
+### Team Members:
 - Rithvi Raj Ravichandran
 - Huijun Choi
 
-///////////////Explain and document your project in a style similar to the mbed notebook pages used in labs with text, code, wiring, photos, and videos.
+# ----- Outline -----
+- List of Components
+  - Sparkfun AS7331 UV Sensor Breakout Board
+  - Mbed LPC1768
+  - Raspberry Pi 4
+  - 28BYJ-48 4-Phase Stepper Motor
+  - ULN2003 Stepper Motor Driver
+- Setup Instruction
+  - Wiring
+  - Library Download
+- How to Run
+- Demo Video
+- Pictures of Example UV map
 
-# [Outline]
-- (1) List of Components
-  - (1.1) Sparkfun AS7331 UV Sensor Breakout Board
-  - (1.2) Mbed LPC1768
-  - (1.3) Raspberry Pi 4
-  - (1.4)
-- (2) Setup Instruction
+# ----- List of Components -----
 
-## List of Components:
-1. Sparkfun AS7331 UV Sensor Breakout Board
+### 1. Sparkfun AS7331 UV Sensor Breakout Board
 
 The UV sensor is a 3-channel AS7331 by ams-OSRAM. It is a low-power, low-noise UV sensor capable of reading UVA, UVB, and UVC channels and converting those radiation levels to a digital result. The chip has adjustable gain, conversion time, and different measurement modes. The chip communicates via I2C and stores a 16-bit integer as the measured value for each respective channel.
 
-2. Mbed LPC1768
+### 2. Mbed LPC1768
 
 The Mbed in this project was chosen to simplify the I2C communication with the AS7331. Additionally, it was able to control the motor using 4 digital inputs through the ULN2003 Stepper Motor Driver
 
-3. Raspberry Pi 4
+### 3. Raspberry Pi 4
 
 temp
 
-4. 28BYJ-48 4-Phase Stepper Motor
+### 4. 28BYJ-48 4-Phase Stepper Motor
 
 temp 
 
-5. ULN2003 Stepper Motor Driver
+### 5. ULN2003 Stepper Motor Driver
 
 temp 
 
-# Setup
+# ----- Setup Intruction -----
 ## Wiring
 
+## Library Download
 
+### Flask
+
+### SocketIO
+
+
+# ----- How to Run -----
+
+### 1.
+### 2.
+### 3.
+### 4.
+
+# ----- Demo Video -----
+
+
+# ----- Pictures of Example UV map -----
