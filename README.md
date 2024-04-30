@@ -1,8 +1,11 @@
-# Team Members:
-
 # UV-Environment-Tracker
 
 This project is an implementation of an IoT UV sensor using an Mbed and Raspberry Pi 4. The Mbed uses a combination of motor control outputs and I2C communication to collect data and transmit the data via UART to a Raspberry Pi. The Pi then accumulates the data while simultaneously running a Flask server that allows the user to see how UV light levels change over time, minute by minute, and how each wavelength of UV light changes independently.
+
+## Team Members:
+Rithvi Raj Ravichandran
+Huijun Choi
+
 
 ## Components:
 1. Sparkfun AS7331 UV Sensor Breakout Board
