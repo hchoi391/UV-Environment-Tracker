@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.js"></script>
+    <meta charset="UTF-8">
+    <title>UV Light Data Web</title>
+    <style>
+      input[type=range] {
+        width: 300px;
+      }
+      output {
+        display: inline-block;
+        width: 50px;
+        text-align: center;
+        margin-left: 10px;
+      }
+      body{
+        background-color: #f5b400;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div>
+      <h1>ECE4180-Final Project</h1>
+      <p>----- Rithvi Ravichandran & Huijun Choi -----</p>
+    </div>
+
+    <hr>
+    <div id="message_container" style="border: 2px solid black"></div>
+    <hr>
+
+    <div>
+
+      <h4>Enter the specific Date and UV type: </h4>
+
+      <form action="{{ url_for('main_page') }}" method="POST">
+
+        <label for="date"> Date: </label>
+        <input type="text" id="date" name="date" placeholder="yyyy-mm-dd" style="position:relative; width: 120px; left:10px;">
+        <br>
+
+        <label for="time">Time: </label>
+        <input type="text" id="time" name="time" placeholder="00:00 ~ 24:00" style="position:relative; width: 120px; left:6px;">
+        <br>
+
+        <label for="UVtype"> UV type: </label>
+        <input type="text" id="UVtype" name="UVtype" placeholder="A, B, or C" style="position:relative; width: 89px; left:10px;">
+        <br>
+
+        <input type="submit" name="submit" value="Submit" style="position:relative; width: 68px; top: 10px; left:118px;">
+
+      </form>
+
+      <p style="position:relative; width: 110px; font-size: 17px; background-color:{{statusColor}};text-align:center; top:-30px;"> 
+        {{message}}
+      </p>
+
+      <button style="position:relative; top: -40px; left:125px;" onclick="reset()">Reset</button>
+
+      <p style="position:relative; width: 143px; top:45px; left:40px; background-color:powderblue; border:1px solid black; font-size: 15px;">
+
+        Date: {{date}}
+        <br>
+        Time: {{time}}
+        <br>
+        UV type: {{UVtype}}
+        <br>
+
+      </p>
+
+      <canvas id="myCanvas" width="300" height="300" style="position:relative; top:-272px; left:200px; background-color: white; border:1px solid black;"> </canvas>
+
+      <script>
+
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        const radius = 350;
+        const centerX = 50;
+        const centerY = 250;
+        var values = '{{uv_data}}';
+
+        values = values.replace(/&#39;/g, "");
+
+        function convertData(inputData) {
+          // Remove parentheses and split by comma
+          var datas = inputData.replace(/\[|\(|\)|\]/g, '').split(', ');
+          var pairs = [];
+          // Pair them up (degree, UV value)
+          for (var i = 0; i < datas.length; i += 2) {
+              var floatValue = parseFloat(datas[i]);
+              var intValue = parseFloat(datas[i + 1]);
+              pairs.push([floatValue, intValue]);
+          }
+
+          return pairs;
+        }
+        
+        function getHMColor(value) {
+            var h = (1.0-value) * 240.0;
+            var s = 100;
+            var l = 50;
+            
+            let colorString = `hsl(${h}, ${s}%, ${l}%)`;
+            
+            console.log(value);
+            console.log(colorString);
+            return colorString;
+        }
+
+        values = convertData(values);
+
+        values.forEach((value, index) => {
+          var angle = value[0];
+          var uv_norm = value[1]; 
+          const x = centerX + radius * Math.cos(angle);
+          const y = centerY + radius * Math.sin(angle);
+
+          // Set line color based on normalized value
+          ctx.strokeStyle = getHMColor(uv_norm);
+
+          ctx.beginPath();
+          ctx.moveTo(centerX, centerY);
+          ctx.lineTo(x, y);
+          ctx.stroke();  
+          console.log(value)
+        });
+
+      </script>
+
+
+      <p style="position:relative; width: 495px; top:-280px; left:10px; background-color:ghostwhite; border:1px solid black;">
+
+      <label for="timeSlider" style="position:relative; margin-left: 5px;">Time Slider:</label>
+      <input type="range" id="timeSlider" name="timeSlider" min="0" max="1439" step="1" value="{{timeSlider}}" style="position:relative; top:2px;" onmouseup="send()">
+      <output for="timeSlider" id="selectedTime" style="position:relative; left:-10px;">{{time}} </output>
+
+      </p>
+
+      <script>
+
+        function reset() {
+            window.location.href = '/';
+        }
+
+        const timeRange = document.getElementById('timeSlider');
+        const selectedTime = document.getElementById('selectedTime');
+
+        timeRange.addEventListener('input', function() {
+          const minutes = parseInt(timeRange.value);
+          const hours = Math.floor(minutes / 60);
+          const mins = minutes % 60;
+          const formattedTime = `${String(hours).padStart(2, '0')}:${String(mins).padStart(2, '0')}`;
+          selectedTime.value = formattedTime;
+        });
+
+        var socket = io()
+
+        function send(){
+          socket.emit('update',
+          {'value':$('#timeSlider').val()})
+          console.log(timeSlider.value);
+          location.reload();
+        }        
+
+      </script>
+
+        
+
+    </div>
+
+  </body>
+
+</html>
