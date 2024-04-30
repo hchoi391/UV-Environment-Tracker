@@ -45,11 +45,13 @@ temp
 # ----- Setup Intruction -----
 ## Wiring
 
+- ### Mbed
+- ### Raspberry Pi
+
 ## Library Download
 
-### Flask
-
-### SocketIO
+- ### Flask
+- ### SocketIO
 
 
 # ----- How to Run -----
