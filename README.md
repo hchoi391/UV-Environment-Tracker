@@ -34,9 +34,18 @@ The UV sensor is a 3-channel AS7331 by ams-OSRAM. It is a low-power, low-noise U
 
 The Mbed in this project was chosen to simplify the I2C communication with the AS7331. Additionally, it was able to control the motor using 4 digital inputs through the ULN2003 Stepper Motor Driver
 
+![image](https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/f7174bef-985c-47cf-8dfe-8bd23ec35172)
+
+[Link to mbed LPC1768](https://os.mbed.com/platforms/mbed-LPC1768/).
+
 ### 3. Raspberry Pi 4
 
 temp
+
+![image](https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/69a8b329-fd78-4333-a6cc-4aefb896c143)
+
+
+[Link to Raspberry Pi 4](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/).
 
 ### 4. 28BYJ-48 4-Phase Stepper Motor
 
