@@ -34,7 +34,7 @@ The UV sensor is a 3-channel AS7331 by ams-OSRAM. It is a low-power, low-noise U
 
 The Mbed in this project was chosen to simplify the I2C communication with the AS7331. Additionally, it was able to control the motor using 4 digital inputs through the ULN2003 Stepper Motor Driver
 
-![image](https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/f7174bef-985c-47cf-8dfe-8bd23ec35172)
+<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/f7174bef-985c-47cf-8dfe-8bd23ec35172" width="400" height="300">
 
 [Link to mbed LPC1768](https://os.mbed.com/platforms/mbed-LPC1768/).
 
@@ -42,8 +42,7 @@ The Mbed in this project was chosen to simplify the I2C communication with the A
 
 temp
 
-![image](https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/69a8b329-fd78-4333-a6cc-4aefb896c143)
-
+<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/69a8b329-fd78-4333-a6cc-4aefb896c143" width="500" height="300">
 
 [Link to Raspberry Pi 4](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/).
 
@@ -55,10 +54,16 @@ temp
 
 <img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/5801859e-c4f4-436c-bdad-547ed5fab607" width="300" height="300">
 
+[Link to 28BYJ-48 - 5V Stepper Motor](https://components101.com/motors/28byj-48-stepper-motor).
 
 ### 5. ULN2003 Stepper Motor Driver
 
 temp 
+
+<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/1fef3114-ceaf-4bed-8baa-a8c64e0c2d4b" width="250" height="220">
+
+
+[Link to ULN2003 Stepper Motor Driver](https://lastminuteengineers.com/28byj48-stepper-motor-arduino-tutorial/).
 
 # ----- Setup Intruction -----
 ## Wiring
