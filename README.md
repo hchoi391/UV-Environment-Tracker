@@ -51,6 +51,11 @@ temp
 
 temp 
 
+<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/38e06aeb-5d86-482d-807f-7bc6ac47f22b" width="300" height="300">
+
+<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/5801859e-c4f4-436c-bdad-547ed5fab607" width="300" height="300">
+
+
 ### 5. ULN2003 Stepper Motor Driver
 
 temp 
