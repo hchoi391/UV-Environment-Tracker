@@ -26,7 +26,7 @@ This project is an implementation of an IoT UV sensor using an Mbed and Raspberr
 
 The UV sensor is a 3-channel AS7331 by ams-OSRAM. It is a low-power, low-noise UV sensor capable of reading UVA, UVB, and UVC channels and converting those radiation levels to a digital result. The chip has adjustable gain, conversion time, and different measurement modes. The chip communicates via I2C and stores a 16-bit integer as the measured value for each respective channel.
 
-![image](https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/95c0a19f-0442-4861-87e1-ae759edc6a24)
+<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/95c0a19f-0442-4861-87e1-ae759edc6a24" width="200" height="150">
 
 [Link to SparkFun Mini Spectral UV Sensor - AS7331 (Qwiic)](https://www.sparkfun.com/products/23518).
 
