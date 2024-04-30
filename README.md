@@ -9,9 +9,12 @@ This project is an implementation of an IoT UV sensor using an Mbed and Raspberr
 ///////////////Explain and document your project in a style similar to the mbed notebook pages used in labs with text, code, wiring, photos, and videos.
 
 # [Outline]
-- (1) List of Components
-
-- (2) Setup Instruction
+(1) List of Components
+  (1.1) Sparkfun AS7331 UV Sensor Breakout Board
+  (1.2) Mbed LPC1768
+  (1.3) Raspberry Pi 4
+  (1.4)
+(2) Setup Instruction
 
 ## List of Components:
 1. Sparkfun AS7331 UV Sensor Breakout Board
