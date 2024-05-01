@@ -32,7 +32,7 @@ The UV sensor is a 3-channel AS7331 by ams-OSRAM. It is a low-power, low-noise U
 
 ### 2. Mbed LPC1768
 
-The Mbed in this project was chosen to simplify the I2C communication with the AS7331. Additionally, it was able to control the motor using 4 digital inputs through the ULN2003 Stepper Motor Driver
+The Mbed in this project was chosen to simplify the I2C communication with the AS7331. Additionally, it was able to control the motor using 4 digital outputs through the ULN2003 Stepper Motor Driver
 
 <img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/f7174bef-985c-47cf-8dfe-8bd23ec35172" width="400" height="300">
 
@@ -69,6 +69,15 @@ temp
 ## Wiring
 
 - ### Mbed
+
+|   Mbed   | AS7331 Breakout |
+| -------- | ------- |
+| p9  | SDA    |
+| p10 | SCL     |
+| VOUT    | 3.3V    |
+| GND     | GND |
+| p21    | INT |
+
 - ### Raspberry Pi
 
 ## Library Download
