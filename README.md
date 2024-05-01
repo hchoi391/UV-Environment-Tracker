@@ -62,7 +62,7 @@ The 4-phase stepper motor provides high accuracy and precision for rotation angl
 
 By using 4 digital ouputs from the Mbed, we can control the stepper motor speed, direction, and amount of steps. 
 
-<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/29440172/152001e7-de64-456c-96e9-6dbd32be9669" width="250" height="220">
+<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/29440172/9d4d3156-e1c8-4da2-8609-00d73a28f5d5" width="250" height="220">
 
 
 [Link to ULN2003 Stepper Motor Driver](https://lastminuteengineers.com/28byj48-stepper-motor-arduino-tutorial/).
