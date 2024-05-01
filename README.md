@@ -133,6 +133,19 @@ To collect UV data, make sure the Mbed and all the components are wired correctl
 
 On the Pi, navigate to the pi_server directory. Run monitor_serial.py using ```python monitor_serial.py```
 
+Press the pushbutton to start the data collection. You should see output in the terminal as the Mbed is sending data over the COM port. Press the pushbutton at any time again to stop data collection and save the data.
+
+### 4. Running the Web Server and connecting
+
+Now that there is data available, run the web server by navigating to the pi_server directory. Run ```python app.py``` to run the server. Take note of the IP address that is displayed and port and type that into a browser.
+
+<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/29440172/56d591da-5999-4b1e-8115-d7bc37180ea4" width="250" height="250">
+
+Use the IP address that is not ```127.0.0.1``` to connect to the webpage from a different computer.
+
+Now you should be able to visualize your data over time.
+
+
 # ----- Demo Video -----
 
 
