@@ -75,7 +75,7 @@ By using 4 digital ouputs from the Mbed, we can control the stepper motor speed,
 # ----- Setup Intruction -----
 ## Wiring
 
-<img src=""https://github.com/hchoi391/UV-Environment-Tracker/assets/29440172/33a20c1a-d62f-4445-88ce-02fafd3f4e5a" width="800" height="400">
+<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/29440172/33a20c1a-d62f-4445-88ce-02fafd3f4e5a" width="800" height="400">
 
 - ### Mbed
 
