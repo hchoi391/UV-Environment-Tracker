@@ -78,6 +78,13 @@ temp
 | GND     | GND |
 | p21    | INT |
 
+| Mbed | ULN2003 Breakout |
+| -------| -------- |
+| p14 | IN1 |
+| p15 | IN2 |
+| p16 | IN3 |
+| p17 | IN4 |
+
 - ### Raspberry Pi
 
 ## Library Download
