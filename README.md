@@ -105,10 +105,14 @@ By using 4 digital ouputs from the Mbed, we can control the stepper motor speed,
 
 ## Library Download
 
-- ### Flask
-- ### SocketIO
+- ### Flask and Flask-SocketIO
 
+On the Raspberry Pi, run the following command in a terminal:
 
+```
+sudo apt update
+sudo apt install python3-flask python3-flask-socketio
+```
 # ----- How to Run -----
 
 ### 1. Mbed Setup
