@@ -52,7 +52,7 @@ UART data from the Mbed and store it in JSON format for easy use on the webpage.
 The 4-phase stepper motor provides high accuracy and precision for rotation angles and provides the ability to rotate continuously, bi-directionally. It is used, in addition to a motor shaft coupler, to angle the UV sensor 45-degrees upwards and rotate it
 360 degrees to get a line of sight to the whole room from where the device was placed. 
 
-<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/38e06aeb-5d86-482d-807f-7bc6ac47f22b" width="300" height="300">
+<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/29440172/152001e7-de64-456c-96e9-6dbd32be9669" width="300" height="300">
 
 <img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/5801859e-c4f4-436c-bdad-547ed5fab607" width="300" height="300">
 
