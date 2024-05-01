@@ -78,8 +78,8 @@
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
         const radius = 350;
-        const centerX = 50;
-        const centerY = 250;
+        const centerX = 150;
+        const centerY = 150;
         var values = '{{uv_data}}';
 
         values = values.replace(/&#39;/g, "");
@@ -98,6 +98,10 @@
           return pairs;
         }
         
+        function toRadians(angle) {
+            return angle * (Math.PI / 180.0);
+        }
+        
         function getHMColor(value) {
             var h = (1.0-value) * 240.0;
             var s = 100;
@@ -105,8 +109,6 @@
             
             let colorString = `hsl(${h}, ${s}%, ${l}%)`;
             
-            console.log(value);
-            console.log(colorString);
             return colorString;
         }
 
@@ -115,8 +117,10 @@
         values.forEach((value, index) => {
           var angle = value[0];
           var uv_norm = value[1]; 
-          const x = centerX + radius * Math.cos(angle);
-          const y = centerY + radius * Math.sin(angle);
+
+          const x = centerX + (radius * Math.cos(toRadians(angle)));
+          const y = centerY + (radius * Math.sin(toRadians(angle)));
+          
 
           // Set line color based on normalized value
           ctx.strokeStyle = getHMColor(uv_norm);

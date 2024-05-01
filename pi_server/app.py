@@ -4,6 +4,7 @@ import math
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO
 from datetime import datetime
+from statistics import mean, median, mode
 
 data_path = 'uv_data'
 
@@ -20,6 +21,17 @@ values = {
    'message': "waiting..."
 }
 
+def median(dataset):
+    data = sorted(dataset)
+    index = len(data) // 2
+    
+    # If the dataset is odd  
+    if len(dataset) % 2 != 0:
+        return data[index]
+    
+    # If the dataset is even
+    return (data[index - 1] + data[index]) / 2
+
 def get_uv_data(date, time, wavelength):
 
 	try:
@@ -27,9 +39,7 @@ def get_uv_data(date, time, wavelength):
 		with open(path, 'r') as f:
 			data = json.load(f)
 			tmp_list = []
-			if not (time in data.keys()):
-				return None
-			tmp_dict = data[time]
+			
 			idx = 0
 
 			match wavelength:
@@ -42,11 +52,56 @@ def get_uv_data(date, time, wavelength):
 				case 'C':
 					idx = 2
 					# break
+				
+			overall_list = []
+			ceiling_val = 400
+			for i, key in enumerate(data.keys()):
+				for angle, uv_tmp_data in data[key].items():
+					if uv_tmp_data[idx] < ceiling_val:
+						overall_list.append(uv_tmp_data[idx])
+					else:
+						overall_list.append(uv_tmp_data[idx])
+						print(f"wrong_data: {uv_tmp_data[idx]}")
+			
+			med_val = median(overall_list)
+			med_val = med_val * 3
+			
+			for i, val in enumerate(overall_list):
+				if val > med_val:
+					overall_list.remove(val)
+					
+			list1 = [ele for ele in overall_list if ele < med_val]
+			
+			max_val = max(list1)
+			min_val = min(list1)
+			
+			print(max_val, min_val)
+				
+			if not (time in data.keys()):
+				return None
+			tmp_dict = data[time]
+			
+			
 
 			for key, val in tmp_dict.items():
-				tmp_list.append((key, val[idx]))
-
-			print(len(tmp_list))
+				if (val[idx] < med_val):
+					tmp_list.append((key, (val[idx]-min_val)/(max_val-min_val)))
+				else:
+					tmp_list.append((key, (med_val-min_val)/(max_val-min_val)))
+					
+			angles = [x / 1000.0 for x in range(0, 360000, 5625)]
+			
+			angles_curr = []
+			for angle, val in tmp_list:
+				angles_curr.append(float(angle))
+			
+			print(angles_curr)
+			for angle in angles:
+				if angle not in angles_curr:
+					print(angle)
+					tmp_list.append((angle, 0))
+					pass 
+				
 			return tmp_list
 		return None
 
@@ -54,7 +109,7 @@ def get_uv_data(date, time, wavelength):
 		return None
 
 
-def normalize_values(values):
+def normalize_values(values, date):
 	intensity = [y for x,y in values]
 	if len(intensity) > 0:
 		max_val = max(intensity)
@@ -150,10 +205,7 @@ def main_page():
 
 	values['uv_data'] = get_uv_data(values['date'], values['time'], values['UVtype'])
 
-	if values['uv_data'] != None :
-		values['uv_data'] = normalize_values(values['uv_data'])
-
-	else:
+	if values['uv_data'] == None :
 		values['statusColor'] = "tomato"
 		values['message'] = "No Data"
 		return render_template('index.html', **values)
