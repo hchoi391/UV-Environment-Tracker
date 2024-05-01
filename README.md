@@ -104,17 +104,34 @@ temp
 
 # ----- How to Run -----
 
-### 1. Create a new Mbed project in Keil Studio. Copy and paste the [main.cpp](https://github.com/hchoi391/UV-Environment-Tracker/blob/aa5a50ba430a5613edb88fa920b52be83db5d55a/mbed_firmware/main.cpp) file in mbed_firmware into the main.cpp file created by Keil.
-### 2. The following libraries are required and can be added through Keil through the Mbed libraries tab.
+### 1. Mbed Setup
+
+Create a new Mbed project in Keil Studio. Copy and paste the [main.cpp](https://github.com/hchoi391/UV-Environment-Tracker/blob/aa5a50ba430a5613edb88fa920b52be83db5d55a/mbed_firmware/main.cpp) file in mbed_firmware into the main.cpp file created by Keil.
+
+The following libraries are required and can be added through Keil through the Mbed libraries tab.
 
 | Name | Link |
 | --- | --- |
 | PinDetect | [Link](http://os.mbed.com/users/AjK/code/PinDetect/) |
 | sMotor | [Link](http://os.mbed.com/users/XtaticO/code/sMotor/) |
 
-### 3. Select your device and build target on the left side, build the project, and transfer the file to the connected Mbed <img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/29440172/071c7c9f-b805-4e94-8c0b-095f76ec04bf" width="250" height="220">
+Select your device and build target on the left side, build the project, and transfer the file to the connected Mbed. 
 
-### 4.
+<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/29440172/071c7c9f-b805-4e94-8c0b-095f76ec04bf" width="250" height="220">
+
+Reset the Mbed and plug it into the Raspberry Pi's USB-A port.
+
+### 2. Raspberry Pi Setup
+
+Copy the [pi_server](https://github.com/hchoi391/UV-Environment-Tracker/tree/c7013147d60fc9a96ca2154a3c8f3967193979f1/pi_server) folder onto your Pi. 
+
+Connect your Pi to the local WiFi network. Whichever computer that is being used to connect to the Pi's webpage should be connected to the same network.
+
+### 3. Collecting data
+
+To collect UV data, make sure the Mbed and all the components are wired correctly and the Mbed is plugged into the Pi.
+
+On the Pi, navigate to the pi_server directory. Run monitor_serial.py using ```python monitor_serial.py```
 
 # ----- Demo Video -----
 
