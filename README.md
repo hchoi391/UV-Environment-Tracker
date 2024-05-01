@@ -92,6 +92,10 @@ temp
 
 - ### Raspberry Pi
 
+| Raspberry Pi | Mbed |
+| --- | --- |
+| USB-A Port | USB Mini-B Port |
+
 ## Library Download
 
 - ### Flask
