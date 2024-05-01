@@ -148,6 +148,6 @@ Now you should be able to visualize your data over time.
 
 # ----- Demo Video -----
 
-<video src="https://youtu.be/naTzLh4TvLk" width="1000" height="500">
+[Link to Youtube Video](https://youtu.be/naTzLh4TvLk)
 
 # ----- Pictures of Example UV map -----
