@@ -3,10 +3,11 @@
 This project is an implementation of an IoT UV sensor using an Mbed and Raspberry Pi 4. The Mbed uses a combination of motor control outputs and I2C communication to collect data and transmit the data via UART to a Raspberry Pi. The Pi then accumulates the data while simultaneously running a Flask server that allows the user to see how UV light levels change over time, minute by minute, and how each wavelength of UV light changes independently.
 
 ### Team Members:
-- Rithvi Raj Ravichandran
+- Rithvi Ravichandran
 - Huijun Choi
 
 # ----- Outline -----
+- Block Diagram
 - List of Components
   - Sparkfun AS7331 UV Sensor Breakout Board
   - Mbed LPC1768
@@ -19,6 +20,10 @@ This project is an implementation of an IoT UV sensor using an Mbed and Raspberr
 - How to Run
 - Demo Video
 - Pictures of Example UV map
+  
+# ----- Block Diagram -----
+
+<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/0c31b390-0f86-4913-ab46-43dd9bd6e053" width="500" height="300">
 
 # ----- List of Components -----
 
@@ -40,7 +45,8 @@ The Mbed in this project was chosen to simplify the I2C communication with the A
 
 ### 3. Raspberry Pi 4
 
-temp
+The Raspberry Pi 4 is a great single-board computer that can be used to easily connect to a network and host a web server. We use it here to host a website using Flask, HTML, CSS, and Javascript. Additionally, it is able to take in
+UART data from the Mbed and store it in JSON format for easy use on the webpage.
 
 <img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/69a8b329-fd78-4333-a6cc-4aefb896c143" width="500" height="300">
 
@@ -48,9 +54,10 @@ temp
 
 ### 4. 28BYJ-48 4-Phase Stepper Motor
 
-temp 
+The 4-phase stepper motor provides high accuracy and precision for rotation angles and provides the ability to rotate continuously, bi-directionally. It is used, in addition to a motor shaft coupler, to angle the UV sensor 45-degrees upwards and rotate it
+360 degrees to get a line of sight to the whole room from where the device was placed. 
 
-<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/38e06aeb-5d86-482d-807f-7bc6ac47f22b" width="300" height="300">
+<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/29440172/152001e7-de64-456c-96e9-6dbd32be9669" width="300" height="300">
 
 <img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/5801859e-c4f4-436c-bdad-547ed5fab607" width="300" height="300">
 
@@ -58,15 +65,17 @@ temp
 
 ### 5. ULN2003 Stepper Motor Driver
 
-temp 
+By using 4 digital ouputs from the Mbed, we can control the stepper motor speed, direction, and amount of steps. 
 
-<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/1fef3114-ceaf-4bed-8baa-a8c64e0c2d4b" width="250" height="220">
+<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/29440172/9d4d3156-e1c8-4da2-8609-00d73a28f5d5" width="250" height="220">
 
 
 [Link to ULN2003 Stepper Motor Driver](https://lastminuteengineers.com/28byj48-stepper-motor-arduino-tutorial/).
 
 # ----- Setup Intruction -----
 ## Wiring
+
+<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/29440172/33a20c1a-d62f-4445-88ce-02fafd3f4e5a" width="800" height="400">
 
 - ### Mbed
 
@@ -98,10 +107,14 @@ temp
 
 ## Library Download
 
-- ### Flask
-- ### SocketIO
+- ### Flask and Flask-SocketIO
 
+On the Raspberry Pi, run the following command in a terminal:
 
+```
+sudo apt update
+sudo apt install python3-flask python3-flask-socketio
+```
 # ----- How to Run -----
 
 ### 1. Mbed Setup
@@ -148,6 +161,9 @@ Now you should be able to visualize your data over time.
 
 # ----- Demo Video -----
 
-<video src="https://github.com/hchoi391/UV-Environment-Tracker/blob/25781e83a8992760dffcfae81e8c7d2f00a3e827/media/demo_video.mp4" width="1000" height="500">
+### Click to watch the video
+[<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/0d5941f9-10c9-4381-9f83-9a5acad6509e" width="70%">](https://youtu.be/naTzLh4TvLk)
 
 # ----- Pictures of Example UV map -----
+
+![image](https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/e69ac7c0-04c8-4dbd-b23c-fb167be8be89)
