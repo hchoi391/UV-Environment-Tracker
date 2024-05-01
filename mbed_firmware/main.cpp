@@ -1,12 +1,10 @@
 #include "mbed.h"
-#include "Stepper.h"
 #include "PinDetect.h"
 #include "sMotor.h"
  
 Serial pc(USBTX, USBRX);
 I2C i2c(p9, p10);
 
-Stepper stepper (p14, p15, p16, p17);   
 sMotor motor(p14, p15, p16, p17); 
 
 int step_speed = 1200 ; // set default motor speed
@@ -16,10 +14,7 @@ volatile int state = 0;
 PinDetect pb(p20, PullUp);
 float angle = 0.0;
 
-int last_pb_state = 0;
-
 Ticker motorTicker;
-volatile int attached = 0;
 
 uint16_t A =0;
 uint16_t B = 0;
@@ -89,8 +84,6 @@ void moveMotor(){
 
     motor.step(num_steps, stepperDir, step_speed);
     angle += interval;
-
-    // printf("angle: %f\n", angle);
 }
 
 void keyReleased(){
