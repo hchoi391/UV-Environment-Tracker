@@ -104,9 +104,16 @@ temp
 
 # ----- How to Run -----
 
-### 1.
-### 2.
-### 3.
+### 1. Create a new Mbed project in Keil Studio. Copy and paste the [main.cpp](https://github.com/hchoi391/UV-Environment-Tracker/blob/aa5a50ba430a5613edb88fa920b52be83db5d55a/mbed_firmware/main.cpp) file in mbed_firmware into the main.cpp file created by Keil.
+### 2. The following libraries are required and can be added through Keil through the Mbed libraries tab.
+
+| Name | Link |
+| --- | --- |
+| PinDetect | [Link](http://os.mbed.com/users/AjK/code/PinDetect/) |
+| sMotor | [Link](http://os.mbed.com/users/XtaticO/code/sMotor/) |
+
+### 3. Select your device and build target on the left side, build the project, and transfer the file to the connected Mbed <img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/29440172/071c7c9f-b805-4e94-8c0b-095f76ec04bf" width="250" height="220">
+
 ### 4.
 
 # ----- Demo Video -----
