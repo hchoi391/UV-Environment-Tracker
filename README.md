@@ -7,6 +7,7 @@ This project is an implementation of an IoT UV sensor using an Mbed and Raspberr
 - Huijun Choi
 
 # ----- Outline -----
+- Block Diagram
 - List of Components
   - Sparkfun AS7331 UV Sensor Breakout Board
   - Mbed LPC1768
@@ -19,6 +20,10 @@ This project is an implementation of an IoT UV sensor using an Mbed and Raspberr
 - How to Run
 - Demo Video
 - Pictures of Example UV map
+- 
+# ----- Block Diagram -----
+
+<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/0c31b390-0f86-4913-ab46-43dd9bd6e053" width="500" height="300">
 
 # ----- List of Components -----
 
