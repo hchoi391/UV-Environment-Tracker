@@ -148,5 +148,6 @@ Now you should be able to visualize your data over time.
 
 # ----- Demo Video -----
 
+<video src="https://github.com/hchoi391/UV-Environment-Tracker/blob/25781e83a8992760dffcfae81e8c7d2f00a3e827/media/demo_video.mp4" width="1000" height="500">
 
 # ----- Pictures of Example UV map -----
