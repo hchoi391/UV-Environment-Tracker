@@ -3,7 +3,7 @@
 This project is an implementation of an IoT UV sensor using an Mbed and Raspberry Pi 4. The Mbed uses a combination of motor control outputs and I2C communication to collect data and transmit the data via UART to a Raspberry Pi. The Pi then accumulates the data while simultaneously running a Flask server that allows the user to see how UV light levels change over time, minute by minute, and how each wavelength of UV light changes independently.
 
 ### Team Members:
-- Rithvi Raj Ravichandran
+- Rithvi Ravichandran
 - Huijun Choi
 
 # ----- Outline -----
@@ -40,7 +40,8 @@ The Mbed in this project was chosen to simplify the I2C communication with the A
 
 ### 3. Raspberry Pi 4
 
-temp
+The Raspberry Pi 4 is a great single-board computer that can be used to easily connect to a network and host a web server. We use it here to host a website using Flask, HTML, CSS, and Javascript. Additionally, it is able to take in
+UART data from the Mbed and store it in JSON format for easy use on the webpage.
 
 <img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/69a8b329-fd78-4333-a6cc-4aefb896c143" width="500" height="300">
 
@@ -48,7 +49,8 @@ temp
 
 ### 4. 28BYJ-48 4-Phase Stepper Motor
 
-temp 
+The 4-phase stepper motor provides high accuracy and precision for rotation angles and provides the ability to rotate continuously, bi-directionally. It is used, in addition to a motor shaft coupler, to angle the UV sensor 45-degrees upwards and rotate it
+360 degrees to get a line of sight to the whole room from where the device was placed. 
 
 <img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/90736210/38e06aeb-5d86-482d-807f-7bc6ac47f22b" width="300" height="300">
 
