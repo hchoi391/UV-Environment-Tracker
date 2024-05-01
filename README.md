@@ -139,7 +139,7 @@ Press the pushbutton to start the data collection. You should see output in the 
 
 Now that there is data available, run the web server by navigating to the pi_server directory. Run ```python app.py``` to run the server. Take note of the IP address that is displayed and port and type that into a browser.
 
-<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/29440172/56d591da-5999-4b1e-8115-d7bc37180ea4" width="250" height="250">
+<img src="https://github.com/hchoi391/UV-Environment-Tracker/assets/29440172/56d591da-5999-4b1e-8115-d7bc37180ea4" width="600" height="250">
 
 Use the IP address that is not ```127.0.0.1``` to connect to the webpage from a different computer.
 
