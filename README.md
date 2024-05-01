@@ -85,6 +85,11 @@ temp
 | p16 | IN3 |
 | p17 | IN4 |
 
+| Other | Device | Pin | Notes |
+| --- | --- | --- | --- |
+| Mbed| Pushbutton | p20 | Connect button to ground |
+| External +5V | Stepper Driver Board | (+) Input | Connect adjacent pin to ground |
+
 - ### Raspberry Pi
 
 ## Library Download
